@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+.theme1{
+    --bg-color-main: hsl(222, 26%, 31%);
+    --text-color-main: white;
+    --bg-result-main: hsl(224, 36%, 15%);
+    --bg-key-main: hsl(223, 31%, 20%);
+    --key-color: hsl(0, 0%, 93%);
+    --key-text-color: hsl(60, 10%, 19%);
+    --color-equal: hsl(6, 63%, 50%);
+    --del-key-color: hsl(225, 21%, 49%);
+    --del-key-text: white;
+    --secondary-shadow: hsla(225, 21%, 49%, 0.651);
+    --equal-shadow: hsla(6, 63%, 50%, 0.63);
+    --key-shadow: hsl(35, 11%, 61%);
+    --equal-text-color: white;
+}
+
+
+.theme2{
+    --bg-color-main: hsl(0, 0%, 90%);
+    --text-color-main: hsl(60, 10%, 19%);
+    --bg-result-main: hsl(0, 0%, 93%);
+    --bg-key-main: hsl(0, 5%, 81%);
+    --key-color: hsl(45, 7%, 89%);
+    --key-text-color: hsl(60, 10%, 19%);
+    --color-equal: hsl(25, 98%, 40%);
+    --del-key-color: hsl(185, 42%, 37%);
+    --secondary-shadow: hsl(185, 58%, 25%);
+    --equal-shadow: hsl(25, 99%, 27%);
+    --key-shadow: hsl(35, 11%, 61%);
+    --del-key-text: white;
+    --equal-text-color: white;
+
+}
+
+.theme3{
+    --bg-color-main: hsl(268, 75%, 9%);
+    --text-color-main: hsl(52, 100%, 62%);
+    --bg-result-main: hsl(268, 71%, 12%);
+    --bg-key-main: hsl(268, 71%, 12%);
+    --key-color: hsl(268, 47%, 21%);
+    --key-text-color:hsl(52, 100%, 62%);
+    --color-equal:  hsl(177, 92%, 70%);
+    --del-key-color: hsl(281, 89%, 26%);
+    --secondary-shadow: hsl(285, 91%, 52%);
+    --equal-shadow: hsl(176, 100%, 44%);
+    --key-shadow: hsl(290, 70%, 36%);
+    --del-key-text: white;
+    --equal-text-color: hsl(198, 20%, 13%);
+}
+
+body{
+    font-family: Spartan;
+    background-color: var(--bg-color-main);
+    color: var(--text-color-main);
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 1fr 1fr 5fr;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+    margin: auto 24px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.theme{
+    display: flex;
+    align-items: flex-end;
+}
+
+.theme-title{
+    height: 24px;
+    margin-right: 30px;
+}
+
+.number{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2px;
+}
+
+.bar{
+    width: 80px;
+    height: 30px;
+    background: var(--bg-key-main);
+    border-radius: 50px; 
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 4px;
+    top: 4px;
+    border-radius: 50%;
+    transition: .4s;
+    background: var(--color-equal);
+}
+
+.center{
+    transform: translateX(25px);
+}
+
+.right{
+    transform: translateX(50px);
+}
+
+.left{
+    transform: translateX(0px);
+}
+
+.result{
+    background: var(--bg-result-main);
+    text-align: end;
+    border-radius: 10px;
+    padding: 24px;
+}
+
+.result span{
+    font-size: 32px;
+}
+
+.key{
+    background: var(--bg-key-main);
+    border-radius: 10px;
+    grid-gap: 18px;
+    padding: 24px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-columns: repeat(4, 1fr);
+}
+
+button{
+    font-family: Spartan;
+    border: none;
+    cursor: pointer;
+    background: var(--key-color);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--key-text-color);
+    font-size: 28px;
+    box-shadow: var(--key-shadow) 0 5px;
+}
+
+button:active{
+    opacity: .4;
+}
+
+.key .bottom{
+    grid-column: span 2;
+}
+
+.is-depressed{
+    opacity: 0.8;
+}
+
+
+button.equal{
+    background: var(--color-equal);
+    color: var(--equal-text-color);
+    box-shadow: var(--equal-shadow) 0 5px;
+}
+
+button.blue{
+    background: var(--del-key-color);
+    color: var(--del-key-text);
+    font-size: 20px;
+    box-shadow: var(--secondary-shadow) 0 5px;
+}
+
+@media screen and (min-width: 768px) {
+    body{
+        margin: auto 12%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body{
+        margin: auto 32%;
+    }
+}
